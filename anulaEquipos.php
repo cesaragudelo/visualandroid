@@ -3,10 +3,10 @@ if (isset($_REQUEST['usr']))
 {
 	$usr=$_REQUEST['usr'];
 	$cnx =  mysqli_connect("localhost","root","","empresa") or die("Ha sucedido un error inexperado en la conexion de la base de datos");
-	$result = mysqli_query($cnx,"select usr from usuarios where usr = '$usr'");
+	$result = mysqli_query($cnx,"select usr from equipos where usr = '$usr'");
 	if (mysqli_num_rows($result)>0)
 	{
-		mysqli_query($cnx,"UPDATE usuarios SET activo='no' WHERE usr = '$usr'");	
+		mysqli_query($cnx,"UPDATE equipos SET activo='no' WHERE usr = '$usr'");	
 	}
 	else
 	{
